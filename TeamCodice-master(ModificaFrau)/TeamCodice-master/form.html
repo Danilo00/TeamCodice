@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!-- rgb(79, 129, 189) colore da utilizzare in generale nel sito -->
+	<head>
+		<title>Intervista</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+		<link rel="STYLESHEET" href="../css/ASL_000002.css">
+		<link rel="STYLESHEET" href="../css/ASL_000001.css">
+				<!-- Bootstrap v4.0.0a CSS libs -->
+		<link rel="STYLESHEET" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+				<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script src="../js/Domande.js"></script>
+		<script>$(function)(){console.log("qui")}></script>
+	</head>
+	<body>
+		<header class="col-md-12"> 
+			<h2 id="hAltoSinistra">Intervista cliente</h1>
+			<!-- il logo è da spostare a destra -->
+			<img class="logo" alt="Gruppo SCAI" src="../images/logo_scai.png">
+		</header>
+		<section>
+			<div id="Domanda"><script>$('#Domanda').text(V_Domande[0])</script>
+				<!-- qua metti la domanda -->
+			</div>
+			<a href="#" onclick="Incremento(),Frecce()"><img src="../images/indietroEnabled.png" id="avanti" alt="avantiOK"></a>
+			<form>
+				<fieldset>
+					<input
+					type="radio"
+					name="rd"
+					value="Molto importante" 
+					id="MI"
+					onchange="Reset('#MI')"
+					onclick="RimuoviSpunta('#MI')">
+					
+					<label for="MI" class="selected">Molto Importante</label>
+					
+					<input type="radio"
+					name="rd"
+					value="Abbastanza importante"
+					id="AI"
+										onchange="Reset('#AI')"
+					onclick="RimuoviSpunta('#AI')"
+					>
+					<label for="AI" class="selected">Abbastanza importante</label>
+					
+					<input type="radio"
+					name="rd"
+					value="Poco importante"
+					id="PI"
+										onchange="Reset('#PI')"
+					onclick="RimuoviSpunta('#PI')"
+					>
+					<label for="PI" class="selected">Poco importante</label>
+				</fieldset>
+			</form>
+			<a href="#" onclick="Decremento(),Frecce()"><img src="../images/avantiEnabled.png" id="indietro" alt="indietroOK"></a>
+			<div class='button'>
+			<a href="#" id ="export" role='button'>Esporta in CSV</a>
+			</div>
+		</section>
+		<footer class="col-md-12"><button type="button" id="hideForFunc">START</button></footer>
+	</body>
+</html>
